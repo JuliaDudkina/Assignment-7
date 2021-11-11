@@ -1,6 +1,6 @@
 <template>
-  <h2>{{ user.name }}'s Main Goal is to</h2>
-  <h3 v-if='user.showGoal'>{{ user.mainGoal }}</h3>
+  <h2>{{ name }}'s Main Goal is to</h2>
+  <h3 v-if='showGoal'>{{ mainGoal }}</h3>
   <button @click='toggleGoal'>Toggle Goal</button>
   <!-- Task 3: Manage data in three ways -->
   <!-- => Separate refs -->
@@ -10,26 +10,22 @@
 </template>
 
 <script>
-// REACTIVE approach
-import {reactive} from 'vue';
 export default {
-  setup(){
-    const user = reactive({
+  data(){
+    return{
       name: 'Julia',
       mainGoal: 'learn Vue.js framework',
       showGoal: true
-    })
-
-    function toggleGoal(){
-      if(user.showGoal){
-        user.showGoal = false;
-      } else{
-        user.showGoal = true;
+    }
+  },
+  methods:{
+    toggleGoal(){
+      if (this.showGoal) {
+        this.showGoal = false;
+      } else {
+        this.showGoal = true;
       }
     }
-    return{ user: user,
-            toggleGoal: toggleGoal
-    };
   }
 }
 </script>
