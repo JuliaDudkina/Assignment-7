@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// REACTIVE approach
 import {reactive} from 'vue';
 export default {
   setup(){
