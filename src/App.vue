@@ -10,21 +10,21 @@
 </template>
 
 <script>
-// REACTIVE approach
-import {reactive} from 'vue';
+// Ref object approach
+import {ref} from 'vue';
 export default {
   setup(){
-    const user = reactive({
+    const user = ref({
       name: 'Julia',
       mainGoal: 'learn Vue.js framework',
       showGoal: true
     })
 
     function toggleGoal(){
-      if(user.showGoal){
-        user.showGoal = false;
+      if(user.value.showGoal){
+        user.value.showGoal = false;
       } else{
-        user.showGoal = true;
+        user.value.showGoal = true;
       }
     }
     return{ user: user,
