@@ -20,11 +20,7 @@ export default {
   },
   methods:{
     toggleGoal(){
-      if (this.showGoal) {
-        this.showGoal = false;
-      } else {
-        this.showGoal = true;
-      }
+        this.showGoal = !this.showGoal;
     }
   }
 }
