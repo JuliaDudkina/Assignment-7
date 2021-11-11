@@ -1,10 +1,7 @@
 <template>
-  <h2>My Course Goal</h2>
-  <!-- Task 1: Output your main course goal with help of the composition API -->
-  <!-- Don't hardcode it into the template, instead hardcode it into the JS code -->
-  <h3>OUTPUT COURSE GOAL</h3>
-  <!-- Task 2: Toggle (show/ hide) the goal with help of the button  -->
-  <button>Toggle Goal</button>
+  <h2>{{ name }}'s Main Goal is to</h2>
+  <h3 v-if='showGoal'>{{ mainGoal }}</h3>
+  <button @click='toggleGoal'>Toggle Goal</button>
   <!-- Task 3: Manage data in three ways -->
   <!-- => Separate refs -->
   <!-- => Ref Object -->
@@ -14,7 +11,22 @@
 
 <script>
 export default {
-  
+  data(){
+    return{
+      name: 'Julia',
+      mainGoal: 'learn Vue.js framework',
+      showGoal: true
+    }
+  },
+  methods:{
+    toggleGoal(){
+      if (this.showGoal) {
+        this.showGoal = false;
+      } else {
+        this.showGoal = true;
+      }
+    }
+  }
 }
 </script>
 
