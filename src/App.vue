@@ -19,11 +19,7 @@ export default {
     const uShowGoal = ref(true);
 
     function toggleGoal(){
-      if(uShowGoal.value){
-        uShowGoal.value = false;
-      } else{
-        uShowGoal.value = true;
-      }
+      uShowGoal.value = !uShowGoal.value;
     }
     return{ userName: uName,
             userMainGoal: uMainGoal,
