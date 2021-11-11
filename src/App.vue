@@ -21,11 +21,7 @@ export default {
     })
 
     function toggleGoal(){
-      if(user.showGoal){
-        user.showGoal = false;
-      } else{
-        user.showGoal = true;
-      }
+        user.showGoal = !user.showGoal;
     }
     return{ user: user,
             toggleGoal: toggleGoal
